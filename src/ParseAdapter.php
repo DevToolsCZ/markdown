@@ -5,6 +5,8 @@ declare(strict_types=1);
 use Devtoolcz\Markdown\Extra\Parsedown;
 use Nette\SmartObject;
 
+namespace Devtoolcz\Markdown;
+
 class ParseAdapter
 {
 

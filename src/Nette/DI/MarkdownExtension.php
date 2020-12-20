@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Devtoolcz\Markdown\Nette\DI;
 
 use Devtoolcz\Markdown\LatteMarkdown;
+use Devtoolcz\Markdown\ParseAdapter;
 use Nette\Bridges\ApplicationLatte\ILatteFactory;
 use Nette\DI\CompilerExtension;
 use Nette\DI\Definitions\FactoryDefinition;
@@ -12,7 +13,6 @@ use Nette\DI\Definitions\Statement;
 use Nette\InvalidStateException;
 use Nette\Schema\Expect;
 use Nette\Schema\Schema;
-use ParseAdapter;
 
 class MarkdownExtension extends CompilerExtension 
 {

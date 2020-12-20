@@ -17,8 +17,13 @@
       },
     "require": {
         "php": ">=7.2",
-		"nette/di": "~3.0.0",
-		"latte/latte": "^2.5",
-		"ext-curl": "*"
+		    "nette/di": "~3.0.0",
+		    "latte/latte": "^2.5",
+		    "ext-curl": "*"
+     },
+     "extra": {
+       "branch-alias": {
+         "dev-main": "1.0-dev"
+       }
      }
 }
