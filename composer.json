@@ -1,0 +1,24 @@
+{
+    "name": "devtoolcz/markdown",
+    "description": "Markdown syntax for latte.",
+    "type": "library",
+    "license": ["MIT", "GPL-3.0"],
+    "authors": [
+        {
+            "name": "Patrik Kolařík",
+            "email": "rydlos123@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+          "Devtoolcz\\Markdown\\": "src"
+        }
+      },
+    "require": {
+        "php": ">=7.2",
+		"nette/di": "~3.0.0",
+		"latte/latte": "^2.5",
+		"ext-curl": "*"
+     }
+}
