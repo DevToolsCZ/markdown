@@ -6,20 +6,20 @@ namespace Devtoolcz\Markdown;
 
 use Devtoolcz\Markdown\Extra\Parsedown;
 use Latte\Runtime\FilterInfo;
-use ParseAdapter;
+use Nette\Utils\Html;
 
 class LatteMarkdown
 {
-	/** @var ParseAdapter */
-	private $parseAdapter;
+	/** @var Parsedown */
+	private $parsedown;
 
-	public function __construct(ParseAdapter $parseAdapter) {
-		$this->parseAdapter = $parseAdapter;
+	public function __construct(Parsedown $parsedown) {
+		$this->parsedown = $parsedown;
 	}
 	
-	public function apply(FilterInfo $filterInfo, $text)
+	public function apply(FilterInfo $info, $text)
 	{
-		$this->parseAdapter->process($text);
+		$html = new Html();
+		return $html::el()->setHtml($this->parsedown->parse($text));
 	}
-
 }
