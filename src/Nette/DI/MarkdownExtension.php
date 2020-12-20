@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Devtoolcz\Markdown\Nette\DI;
 
+use Devtoolcz\Markdown\Extra\Parsedown;
 use Devtoolcz\Markdown\LatteMarkdown;
 use Devtoolcz\Markdown\ParseAdapter;
 use Nette\Bridges\ApplicationLatte\ILatteFactory;
@@ -27,8 +28,8 @@ class MarkdownExtension extends CompilerExtension
 	{
 		$builder = $this->getContainerBuilder();
 
-		$builder->addDefinition($this->prefix('parsedown'))
-			->setFactory(ParseAdapter::class);
+		$builder->addDefinition($this->prefix('parseDown'))
+			->setFactory(Parsedown::class);
 	}
 
 	public function beforeCompile()
@@ -39,9 +40,11 @@ class MarkdownExtension extends CompilerExtension
 			throw new InvalidStateException(sprintf('Service which implements %s not found.', ILatteFactory::class));
 
 		$config = (array) $this->config;
+
 		$latte = $builder->getDefinitionByType(ILatteFactory::class);
 		assert($latte instanceof FactoryDefinition);
-		$latte->getResultDefinition()->addSetup('addFilter', $config['syntax_helper'], [new Statement(LatteMarkdown::class)], '');
+
+		$latte->getResultDefinition()->addSetup('addFilter', [$config['syntax_helper'], [new Statement(LatteMarkdown::class), 'apply']]);
 	}
 
 }
