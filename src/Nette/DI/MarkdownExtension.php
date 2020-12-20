@@ -14,7 +14,7 @@ use Nette\Schema\Expect;
 use Nette\Schema\Schema;
 use ParseAdapter;
 
-class Markdown extends CompilerExtension 
+class MarkdownExtension extends CompilerExtension 
 {
 	public function getConfigSchema(): Schema
 	{
