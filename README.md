@@ -1,0 +1,2 @@
+# markdown
+Latte Markdown Syntax
