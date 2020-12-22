@@ -6,7 +6,6 @@ namespace Devtoolcz\Markdown\Nette\DI;
 
 use Devtoolcz\Markdown\Extra\Parsedown;
 use Devtoolcz\Markdown\LatteMarkdown;
-use Devtoolcz\Markdown\ParseAdapter;
 use Nette\Bridges\ApplicationLatte\ILatteFactory;
 use Nette\DI\CompilerExtension;
 use Nette\DI\Definitions\FactoryDefinition;
