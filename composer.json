@@ -17,13 +17,14 @@
       },
     "require": {
         "php": ">=7.2",
-		    "nette/di": "~3.0.0",
+        "nette/utils": "^3.0",
+        "nette/di": "^3.0",
 		    "latte/latte": "^2.5",
 		    "ext-curl": "*"
      },
      "extra": {
        "branch-alias": {
-         "dev-master": "1.0-dev"
+         "dev-master": "1.1-dev"
        }
      }
 }
